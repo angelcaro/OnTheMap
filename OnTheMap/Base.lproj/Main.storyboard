@@ -36,7 +36,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  Password" placeholder="  Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1U-3d-ehI">
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1U-3d-ehI">
                                 <rect key="frame" x="180" y="330" width="240" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="0.86942300449999999" colorSpace="calibratedWhite"/>
@@ -90,7 +90,17 @@
                                     <action selector="signupButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="EhH-SU-zqu"/>
                                 </connections>
                             </button>
-                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-sd-HNJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA5-xh-Xh8">
+                                <rect key="frame" x="180" y="479" width="240" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Gx7-UK-Zwz"/>
+                                    <constraint firstAttribute="height" constant="21" id="jJp-qA-KsM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-sd-HNJ">
                                 <rect key="frame" x="180" y="280" width="240" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -113,8 +123,10 @@
                             <constraint firstItem="l1U-3d-ehI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGm-Op-XK1"/>
                             <constraint firstItem="cCW-UV-wMB" firstAttribute="top" secondItem="kvM-aJ-JKt" secondAttribute="bottom" constant="9" id="J5I-wW-k0q"/>
                             <constraint firstItem="Uef-iW-zGB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KS8-zr-F1B"/>
+                            <constraint firstItem="cA5-xh-Xh8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P3K-UP-vuN"/>
                             <constraint firstItem="kvM-aJ-JKt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QPi-49-WZe"/>
                             <constraint firstItem="kvM-aJ-JKt" firstAttribute="top" secondItem="l1U-3d-ehI" secondAttribute="bottom" constant="10" id="RNa-p2-8y6"/>
+                            <constraint firstItem="cA5-xh-Xh8" firstAttribute="top" secondItem="cCW-UV-wMB" secondAttribute="bottom" constant="20" id="UhX-Nj-rSI"/>
                             <constraint firstItem="msn-kV-OCG" firstAttribute="top" secondItem="kvM-aJ-JKt" secondAttribute="bottom" constant="14" id="Wif-WS-jdL"/>
                             <constraint firstItem="msn-kV-OCG" firstAttribute="baseline" secondItem="cCW-UV-wMB" secondAttribute="firstBaseline" id="a3S-yd-GkO"/>
                             <constraint firstItem="cCW-UV-wMB" firstAttribute="leading" secondItem="msn-kV-OCG" secondAttribute="trailing" constant="-1" id="eIj-0e-43i"/>
@@ -127,13 +139,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="debugTextLabel" destination="cA5-xh-Xh8" id="k5k-v0-Qgi"/>
                         <outlet property="emailTextField" destination="IKI-sd-HNJ" id="ERL-wR-2M0"/>
+                        <outlet property="loginButton" destination="kvM-aJ-JKt" id="bmc-Ar-H1C"/>
                         <outlet property="passwordTextField" destination="l1U-3d-ehI" id="eBn-a0-XLI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379.5" y="349.5"/>
+            <point key="canvasLocation" x="379" y="349"/>
         </scene>
     </scenes>
     <resources>

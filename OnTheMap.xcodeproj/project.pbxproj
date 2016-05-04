@@ -12,6 +12,7 @@
 		898777321CD92D990069B2A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898777301CD92D990069B2A3 /* Main.storyboard */; };
 		898777341CD92D990069B2A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 898777331CD92D990069B2A3 /* Assets.xcassets */; };
 		898777371CD92D990069B2A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898777351CD92D990069B2A3 /* LaunchScreen.storyboard */; };
+		8987773F1CD9525C0069B2A3 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8987773E1CD9525C0069B2A3 /* UdacityClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		898777331CD92D990069B2A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		898777361CD92D990069B2A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		898777381CD92D990069B2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8987773E1CD9525C0069B2A3 /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				8987772C1CD92D990069B2A3 /* AppDelegate.swift */,
 				8987772E1CD92D990069B2A3 /* LoginViewController.swift */,
 				898777301CD92D990069B2A3 /* Main.storyboard */,
+				8987773E1CD9525C0069B2A3 /* UdacityClient.swift */,
 				898777331CD92D990069B2A3 /* Assets.xcassets */,
 				898777351CD92D990069B2A3 /* LaunchScreen.storyboard */,
 				898777381CD92D990069B2A3 /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8987773F1CD9525C0069B2A3 /* UdacityClient.swift in Sources */,
 				8987772F1CD92D990069B2A3 /* LoginViewController.swift in Sources */,
 				8987772D1CD92D990069B2A3 /* AppDelegate.swift in Sources */,
 			);

@@ -12,35 +12,74 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var debugTextLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func loginButtonPressed() {
         
-        
+        loginButton.enabled = false
         
     }
 
     @IBAction func signupButtonPressed() {
         
-        
+        if let requestUrl = NSURL(string: "https://www.udacity.com/account/auth#!/signup") {
+            UIApplication.sharedApplication().openURL(requestUrl)
+        } else {
+            debugTextLabel.text = "Cannot open page"
+        }
         
     }
     
+    //MARK: Keyboard Functions
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        resignFirstResponder()
+        
+        textField.resignFirstResponder()
         
         return true
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+   
+    
+    //MARK: View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        emailTextField.text = " Email"
+        passwordTextField.text = " Password"
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
 
+extension LoginViewController {
+    
+    private func setUIEnabled(enabled: Bool) {
+        loginButton.enabled = enabled
+        debugTextLabel.enabled = enabled
+        
+        // adjust login button alpha
+        if enabled {
+            loginButton.alpha = 1.0
+        } else {
+            loginButton.alpha = 0.5
+        }
+    }
+    
+    private func displayError(errorString: String?) {
+        if let errorString = errorString {
+            debugTextLabel.text = errorString
+        }
+    }
+}
