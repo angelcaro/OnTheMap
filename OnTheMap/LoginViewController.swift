@@ -10,14 +10,16 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    var udacityClient: UdacityClient!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var debugTextLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func loginButtonPressed() {
+     
         
-        loginButton.enabled = false
         
     }
 
@@ -53,12 +55,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
-        emailTextField.text = " Email"
-        passwordTextField.text = " Password"
+
         
     }
-
+    
+    //Segue to tab bar controller
+    /*private func completeLogin() {
+        debugTextLabel.text = ""
+        let controller = storyboard!.instantiateViewControllerWithIdentifier("ManagerNavigationController") as! UINavigationController
+        presentViewController(controller, animated: true, completion: nil)
+    }*/
 
 
 }
