@@ -11,7 +11,7 @@ import Foundation
 class UdacityClient: NSObject {
     
     var session = NSURLSession.sharedSession()
-    typealias UdacityCompletionHandler = (data: [String: AnyObject]?, errorString: String?) -> Void
+    typealias UdacityCompletionHandler = (data: [String: AnyObject]?, errorString: NSError) -> Void
     
     func login(email: String, password: String, completionHandler: UdacityCompletionHandler) {
         
@@ -24,16 +24,26 @@ class UdacityClient: NSObject {
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             
-            if let error = error  {
-                completionHandler(data: nil, errorString: error.localizedDescription)
+            guard (error == nil) else {
+                completionHandler(data: nil, errorString: error!)
+                print(error)
                 return
             }
-            if let data = data {
+            
+            guard let data = data else {
+                completionHandler(data: nil, errorString: error!)
+                print(error)
+                return
+            }
+            
+            print("ok")
+            
+           /* if let data = data {
                 let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
                 print("success")
             } else {
-                completionHandler(data: nil, errorString: "Login Error: Unable to retrieve data")
-            }
+                completionHandler(data: nil, errorString: error!)
+            }*/
     }
     task.resume()
     }

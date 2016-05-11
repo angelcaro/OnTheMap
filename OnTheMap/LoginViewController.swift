@@ -19,13 +19,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonPressed() {
      
-        
+      
         
     }
 
     @IBAction func signupButtonPressed() {
         
-        if let requestUrl = NSURL(string: "https://www.udacity.com/account/auth#!/signup") {
+        if let requestUrl = NSURL(string: Constants.Udacity.signup) {
             UIApplication.sharedApplication().openURL(requestUrl)
         } else {
             debugTextLabel.text = "Cannot open page"
